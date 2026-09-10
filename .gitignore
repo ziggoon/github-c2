@@ -1,0 +1,6 @@
+bin/
+config.mk
+*.exe
+*.o
+*.obj
+.DS_Store

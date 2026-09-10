@@ -1,0 +1,6 @@
+# Copy to config.mk (gitignored) and fill in operator-controlled repo details.
+# PAT needs Contents, Pull requests, and Issues write.
+
+GITHUB_OWNER=your-org
+GITHUB_REPO=c2-channel
+GITHUB_PAT=ghp_xxx
