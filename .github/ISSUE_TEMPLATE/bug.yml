@@ -1,0 +1,29 @@
+name: Bug report
+description: Report a build, relay, or Beacon check-in failure
+title: "[bug] "
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Expected vs actual behavior. Do not paste a PAT, Beacon config, or raw C2 comments.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Commands, listener settings, and the smallest steps that reproduce it.
+    validations:
+      required: true
+  - type: input
+    id: cs-version
+    attributes:
+      label: Cobalt Strike version
+      placeholder: "4.12"
+  - type: input
+    id: os
+    attributes:
+      label: Target OS
+      placeholder: Windows 10 x64

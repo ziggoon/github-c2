@@ -1,0 +1,19 @@
+name: Feature request
+description: Propose a change to the BOF, relay, or build
+title: "[feat] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is missing or painful today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: The change you want and why it belongs in this channel.
+    validations:
+      required: true

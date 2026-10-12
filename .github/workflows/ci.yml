@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y mingw-w64 cppcheck python3
+      - name: Lint
+        run: make lint
+      - name: Build exe
+        run: make exe GITHUB_OWNER=ci GITHUB_REPO=ci GITHUB_PAT=ghp_ci
+      - name: Build BOF
+        run: make bof GITHUB_OWNER=ci GITHUB_REPO=ci GITHUB_PAT=ghp_ci
+      - name: Lint BOF object
+        run: python3 scripts/boflint.py --loader cs bin/github-c2.x64.o
